@@ -5,8 +5,11 @@ amplitude = 3.2
 signal_frequency = 10
 sampling_frequency = 1000
 dac = None
+pwm_pin = 12
+pwm_frequancy = 1000
+dynamic_range = 3.3
 try:
-    dac = wm.WMDAC()
+    dac = wm.PWM_DAC(pwm_pin,pwm_frequancy,dynamic_range)
     t = 0.0
     dt = 1 / sampling_frequency
     while True:
