@@ -4,8 +4,11 @@ import time
 amplitude = 3.2
 signal_frequency = 10
 sampling_frequency = 1000
+dac_bits = [16,20,21,25,26,17,27,22]
+dynamic_range = 3.3
+dac = None
 try:
-    dac = r2r.R2RDAC()
+    dac = r2r.R2R_DAC(dac_bits,dynamic_range)
     t = 0.0
     dt = 1 / sampling_frequency
     
