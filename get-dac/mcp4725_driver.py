@@ -2,13 +2,12 @@ import smbus
 
 
 class MCP4725:
-    def __init__(self, dynamic_range, address=0x60, verbose=True):
+    def __init__(self, dynamic_range, address=0x61, verbose=True):
         self.bus = smbus.SMBus(1)
         self.address = address
         self.verbose = verbose
         self.dynamic_range = float(dynamic_range)
 
-        # Fast mode, PD=0 (normal)
         self.pd = 0x00
 
     def deinit(self):
@@ -55,7 +54,7 @@ class MCP4725:
 
 
 def main():
-    dac = MCP4725(dynamic_range=3.3, address=0x60, verbose=True)
+    dac = MCP4725(dynamic_range=5.1, address=0x61, verbose=True)
     try:
         while True:
             s = input("Введите напряжение в Вольтах: ").strip()
