@@ -12,7 +12,7 @@ class PWM_DAC:
         GPIO.setup(self.gpio_pin, GPIO.OUT, initial=GPIO.LOW)
 
         self.pwm = GPIO.PWM(self.gpio_pin, self.pwm_frequency)
-        self.pwm.start(0)  # duty cycle 0%
+        self.pwm.start(0)  
 
     def deinit(self):
         try:
