@@ -24,7 +24,6 @@ class PWM_DAC:
 
     def set_voltage(self, voltage):
         v = float(voltage)
-
         if not (0.0 <= v <= self.dynamic_range):
             if self.verbose:
                 print(f"Напряжение вне диапазона 0..{self.dynamic_range:.3f} В, ставим 0")
