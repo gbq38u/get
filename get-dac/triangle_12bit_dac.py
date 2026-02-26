@@ -1,0 +1,26 @@
+import mcp4725_ddriver as mcp
+import signal_generator as sg
+import time
+
+amplitude = 2.0
+signal_frequency = 10
+sampling_frequency = 1000
+
+dac = None
+try:
+    dac = mcp.MCP4725(dynamic_range=5.11, address=0x61)
+
+    t = 0.0
+    dt = 1 / sampling_frequency
+
+    while True:
+        value = sg.get_triangle_wave_amplitude(signal_frequency, t)
+        voltage = amplitude * value
+        dac.set_voltage(voltage)
+
+        sg.wait_for_sampling_period(sampling_frequency)
+        t += dt
+
+finally:
+    if dac is not None:
+        dac.deinit()
