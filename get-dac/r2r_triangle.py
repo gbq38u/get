@@ -13,7 +13,7 @@ dynamic_range = 3.3
 
 dac = None
 try:
-    dac = r2r.R2RDAC(dac_bits, dynamic_range)
+    dac = r2r.R2R_DAC(dac_bits, dynamic_range)
 
     t = 0.0
     dt = 1 / sampling_frequency
