@@ -5,3 +5,11 @@ def get_sin_wave_amplitude(freq, t):
 def wait_for_sampling_period(sampling_frequency):
     time.sleep(1 / sampling_frequency)
 
+def get_triangle_wave_amplitude(freq, time):
+    period = 1.0 / freq
+    phase = (time % period) / period
+
+    if phase < 0.5:
+        return 2 * phase      
+    else:
+        return 2 * (1 - phase)  

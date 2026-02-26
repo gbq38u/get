@@ -1,5 +1,16 @@
 import RPi.GPIO as GPIO
 
+import math
+
+def get_triangle_wave_amplitude(freq, time):
+    period = 1 / freq
+    phase = (time % period) / period
+
+    if phase < 0.5:
+        return 2 * phase        # 0 → 1
+    else:
+        return 2 * (1 - phase)  # 1 → 0
+    
 
 class R2R_DAC:
     def __init__(self, gpio_bits, dynamic_range, verbose=False):
