@@ -78,14 +78,15 @@ class R2R_ADC:
 
 
 
-try:
-    adc = R2R_ADC(dynamic_range=3.3)
+if __name__ == "__main__":
+    try:
+        adc = R2R_ADC(dynamic_range=3.3)
 
-    while True:
-        voltage = adc.get_sc_voltage()
-        print(f"Напряжение: {voltage:.3f} В")
-        time.sleep(0.1)
+        while True:
+            voltage = adc.get_sc_voltage()
+            print(f"Напряжение: {voltage:.3f} В")
+            time.sleep(0.1)
 
-finally:
-    adc.close()
+    finally:
+        adc.close()
 
