@@ -31,7 +31,7 @@ def plot_sampling_period_hist(time):
     plt.xlabel("Sampling period (s)")
     plt.ylabel("Number of measurements")
 
-    plt.xlim(0, 0.06)
+    plt.xlim(0, max(sampling_periods))
 
     plt.grid(True)
     plt.show()
