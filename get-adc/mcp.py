@@ -1,5 +1,5 @@
 import time
-from mcp3021 import MCP3021
+from mcp3021_driver import MCP3021
 from adc_plot import plot_voltage_vs_time, plot_sampling_period_hist
 
 voltage_values = []
