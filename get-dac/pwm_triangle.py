@@ -4,10 +4,10 @@ import time
 
 amplitude = 2.0            
 signal_frequency = 10      
-sampling_frequency = 1000  
+sampling_frequency = 500  
 
 pwm_pin = 12               
-pwm_frequency = 1000       
+pwm_frequency = 500       
 dynamic_range = 3.3        
 
 

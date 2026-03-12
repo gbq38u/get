@@ -2,7 +2,7 @@ import r2r_dac as r2r
 import signal_generator as sg
 import time
 
-amplitude = 2.0              
+amplitude = 3.0              
 signal_frequency = 10        
 sampling_frequency = 1000    
 
