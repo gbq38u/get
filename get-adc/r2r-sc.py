@@ -1,6 +1,6 @@
 import time
 from r2r_adc import R2R_ADC
-from adc_plot import plot_voltage_vs_time
+from adc_plot import plot_voltage_vs_time,plot_sampling_period_hist
 
 
 voltage_values = []
@@ -20,6 +20,6 @@ try:
         voltage_values.append(voltage)
 
     plot_voltage_vs_time(time_values, voltage_values, adc.dynamic_range)
-
+    plot_sampling_period_hist(time_values)
 finally:
     adc.close()
